@@ -13,7 +13,7 @@ jobs:
         with:
           script: |
             await exec('npx', ['mkcert', 'create-ca', '--validity 365']);
-            await exec('npx', ['mkcert', 'create-cert', '--validity 365']);
+            await exec('npx', ['mkcert', 'create-cert', '--validity 365', '--domains localhost,127.0.0.1']);
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
