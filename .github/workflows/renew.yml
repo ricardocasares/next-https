@@ -2,7 +2,7 @@ name: renew
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 0 1 * *"
 
 jobs:
   renew:
@@ -12,13 +12,13 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            await exec('npx', ['mkcert', 'create-ca', '--validity 365']);
-            await exec('npx', ['mkcert', 'create-cert', '--validity 365', '--domains localhost,127.0.0.1']);
+            await exec.exec('npx', ['mkcert', 'create-ca']);
+            await exec.exec('npx', ['mkcert', 'create-cert']);
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
           file-path: |
             cert.crt
             cert.key
-          commit-msg: "fix: renew certificates (auto)"
+          commit-msg: "fix: renew certificates"
           github-token: ${{ secrets.GITHUB_TOKEN }}
