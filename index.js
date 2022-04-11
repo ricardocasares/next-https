@@ -9,8 +9,8 @@ const DEFAULT_CONFIG = {
   host: 'localhost',
   port: 9000,
   target: 3000,
-  key: path.resolve(__dirname, 'key.pem'),
-  cert: path.resolve(__dirname, 'cert.pem'),
+  key: path.resolve(__dirname, 'cert.key'),
+  cert: path.resolve(__dirname, 'cert.crt'),
   enabled: process.env.NODE_ENV === 'development'
 };
 

@@ -1,0 +1,24 @@
+name: renew
+
+on:
+  schedule:
+    - cron: "0 0 1 1 *"
+
+jobs:
+  renew:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            await exec('npx', ['mkcert', 'create-ca', '--validity 365']);
+            await exec('npx', ['mkcert', 'create-cert', '--validity 365']);
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: |
+            cert.crt
+            cert.key
+          commit-msg: "fix: renew certificates (auto)"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
