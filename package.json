@@ -1,0 +1,25 @@
+{
+  "name": "next-https",
+  "version": "0.1.0",
+  "author": "Ricardo Casares <ricardocasares@gmail.com> (https://analogic.al)",
+  "repository": "github:ricardocasares/next-https",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "key.pem",
+    "cert.pem",
+    "index.js"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "cert": "mkcert localhost 127.0.0.1 ::1"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  },
+  "devDependencies": {
+    "next": "^12.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
