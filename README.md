@@ -16,15 +16,15 @@ Inside your Next.js configuration file:
 
 ```js
 // next.config.js
-const nextSSL = require("next-https");
+const useHttps = require("next-https");
 
 // You can pass options here
-const withSSL = nextSSL({
+const withHttps = useHttps({
   enabled: process.env.NODE_ENV === "development",
 });
 
 // pass your Next.js options here
-module.exports = withSSL({
+module.exports = withHttps({
   reactStrictMode: true,
 });
 ```
