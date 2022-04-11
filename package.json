@@ -6,8 +6,8 @@
   "main": "index.js",
   "license": "MIT",
   "files": [
-    "key.pem",
-    "cert.pem",
+    "cert.key",
+    "cert.crt",
     "index.js"
   ],
   "scripts": {
