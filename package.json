@@ -4,6 +4,23 @@
   "author": "Ricardo Casares <ricardocasares@gmail.com> (https://analogic.al)",
   "repository": "github:ricardocasares/next-https",
   "main": "index.js",
+  "keywords": [
+    "next.js",
+    "https",
+    "next",
+    "ssl",
+    "secure",
+    "worker",
+    "location",
+    "geolocation",
+    "background",
+    "sync",
+    "bluetooth",
+    "webauth",
+    "payments",
+    "notifications",    
+    "localhost"
+  ],
   "license": "MIT",
   "files": [
     "cert.key",
